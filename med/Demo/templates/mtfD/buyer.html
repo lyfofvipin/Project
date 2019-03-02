@@ -1,0 +1,11 @@
+{% extends "mtfD/base.html" %}
+{% block body%}
+    <h1>Buyers login page</h1>    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <button type="submit">Sing up</button>
+    </form>
+    <p>Allready have an accont?</p>
+    <a href="{% url 'login' %}">Log in</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        {% if TIT %}
+            <title>{{ TIT }}</title>
+        {% else %}
+            <title>Default</title>
+        {% endif %}
+    </head>
+    <body>
+        {% if messages %}
+            {% for x in messages %}
+                {{ x }}
+            {% endfor %}    
+        {% endif %}
+        
+        {% if user.is_authenticated %}
+            <div align="right">
+            <a href="{% url 'logout'%}">Logout</a>
+            <a href="{% url 'profile'%}">Profile</a>
+            </div>
+            {% if user.user_type.is_saler %}
+            <a href="{% url 'add' %}">Want to add some meds</a>
+            {% endif %}
+        {% else %}
+            <table align="center">
+            <th rowspan="9",colspan="12"><a href="{% url 'login' %}">Login</a></tr>
+            <th rowspan="9",colspan="12"><a href="{% url 'buyer' %}">Sing in as Buyer</a></th>
+            <th rowspan="9",colspan="12"><a href="{% url 'saler' %}">Sing in as saler</a></th>
+            <th rowspan="9",colspan="12"><a href="{% url 'agent' %}">Sing in as Agent</a></th>
+        {% endif %}
+        </table>
+        {% block body%} {% endblock %}
+        {% if TIT != 'Home|Page' %}
+            <a href="{% url 'blog-home' %}">Home</a>
+        {% endif %}
+    </body>
+</html>

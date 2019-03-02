@@ -1,0 +1,13 @@
+{% extends 'mtfD/base.html' %}
+{% block body %}
+<br>
+    {{ object.user }} <br>  
+    {{ object.name }} <br>  
+    {{ object.price }} <br>
+    {{ object.qunt }} <br>
+    {% if object.user == user %}
+    <a href="{% url 'update' object.id %}">Update</a>
+    <a href="{% url 'del' object.id %}">Delete</a>
+    {% endif %}
+    <a href="{% url 'buy' %}">Want to buy ?</a>
+{% endblock %}

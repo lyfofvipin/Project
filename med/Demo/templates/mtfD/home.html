@@ -1,0 +1,15 @@
+{% extends "mtfD/base.html" %}
+{% block body%}
+    <h1>We are it home page of MED app everything works good :)</h1>
+    <p>List of avilable meds</p>
+    {% if meds %}
+        {% for x in meds %}
+           <div>
+               <a href="{% url 'detail' x.id %}">{{ x.name }}</a> <br>
+               {{ x.price }}<br>
+               {{ x.qunt }}<br>
+           </div>
+           <br><br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

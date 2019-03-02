@@ -1,0 +1,9 @@
+{% extends 'mtfD/base.html' %}
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Are you sure you want to delete {{ object.name }} ?</h2>
+        <button type="submit">Delete</button>
+        <a href="{% url 'detail' object.id %}">Cancel</a>
+    </form>
+{% endblock %}

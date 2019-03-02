@@ -1,0 +1,12 @@
+{% extends 'mtfD/base.html'%}
+{% block body %}
+<img src="{{ user.profile.image.url }}">
+    <h1>{{ user.username }}</h1>
+    <h1>{{ user.email }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+        <a href="{% url 'pasre' %}">Reset password</a>
+    </form>
+{% endblock %}

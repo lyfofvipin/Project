@@ -1,0 +1,13 @@
+{% extends "mtfD/base.html" %}
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <a href="{% url 'pasre' %}">Forgot your password</a>
+    </form>
+    <p>Need an accont?</p>
+    <a href="{% url 'buyer' %}">Sing Up as Buyer</a><br>
+    <a href="{% url 'saler' %}">Sing Up as Saler</a><br>
+    <a href="{% url 'agent' %}">Sing Up as Agent</a><br>
+{% endblock %}
