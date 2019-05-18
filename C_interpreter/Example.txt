@@ -1,0 +1,13 @@
+This Code is written in shell and act as a C language Interpreter, Purpose behind building this code is to 
+help in forming some tasks without writing all the syntax and compulsory statement of code.
+code without that typing main and other coumplsury syntexes :) 
+This interpreter is included stdio.h library, If you want to add other then you can add them just by typing them
+Ex : #include<conio.h>  
+And then you can start your program direct from initializing state main function and curly brackets are auto write by the script.
+This script will create a temporary file name temprary_file.c in your directory which will auto delete when you type exit.
+
+>>>> #include<conio.h>
+>>>> print("It's working good");
+>>>> 
+
+It's working good
