@@ -1,8 +1,8 @@
 import random
 sticks = 21
 
-print("There are 21 sticks, you can take 1-4 number of sticks at a time.")
-print("Whoever will take the last stick will loose")
+print("There are 21 sticks, you can take 1-4 sticks at a time.")
+print("Whoever will pick the last stick will loose")
 flag = 1
 while True:
 
