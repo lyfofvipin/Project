@@ -1,9 +1,11 @@
-echo "This is an Interpreter for C language, Purpose behinde coding this interpreter is that you can simply "
+echo "This Code is written in shell and act as a C language Interpreter, Purpose behind building this code is to 
+help in forming some tasks without writing all the syntax and compulsory statement of code."
 echo "code without that typing main and other coumplsury syntexes :) "
-echo "This interpriter is included stdio.h library remaining you can add according to yor code"
-echo "This script will create a file name temprary_file.c in your current directery so dont't worry "
-echo "It will auto delete when you exit interpriter."
-echo "press exit to close interpriter."
+echo "This interpreter is included stdio.h library, If you want to add other then you can add them just by typing them
+Ex : #include<conio.h>  
+And then you can start your program direct from initializing state main function and curly brackets are auto write by the script."
+echo "This script will create a temporary file name temprary_file.c in your directory which will auto delete when you type exit."
+
 while :
 do
 echo "#include<stdio.h>" > temprary_file.c
