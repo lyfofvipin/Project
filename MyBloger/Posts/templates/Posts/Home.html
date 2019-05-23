@@ -1,4 +1,13 @@
 {% extends 'Posts/Base.html' %}
 {% block data %}
     <h1> Home Page ! </h1>
+    {% for post in Posts %}
+        {{ post.Title }} <br>
+        {{ post.Auther }} <br>
+        <p>
+            {{ post.Content }} <br>
+        </p>
+        {{ post.Publish_date }} <br>
+        {{ post.Last_updated }} <br>
+    {% endfor %}
 {% endblock data %}
