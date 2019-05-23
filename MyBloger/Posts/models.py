@@ -7,6 +7,8 @@ class User(AbstractUser):
 
 class Post(models.Model):
 
-    Auther = models.CharField(max_length=50)
-    Content = models.CharField(max_length=1000)
-    Publish_date = models.DateTimeField('pubdate')
+    Title = models.CharField(default='Title Of Post', max_length=50)
+    Content = models.TextField()
+    Publish_date = models.DateTimeField(auto_now_add=False)
+    Last_updated = models.DateTimeField(auto_now=True)
+    Auther = models.ForeignKey(User, on_delete=models.CASCADE)
