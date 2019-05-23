@@ -9,5 +9,5 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["Title"] = "Home | Posts"
+        context["title"] = "Home | Posts"
         return context
