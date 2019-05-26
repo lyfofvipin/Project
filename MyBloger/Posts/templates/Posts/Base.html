@@ -9,8 +9,12 @@
     </title>
 </head>
 <body>
-{% block data %}
+    {% if message %}
+        {{ message }}
+    {% endif %}
+    
+    {% block data %}
 
-{% endblock data %}
+    {% endblock data %}
 </body>
 </html>

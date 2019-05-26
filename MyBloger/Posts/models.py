@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 class User(AbstractUser):
     
-    pass
+    email = models.EmailField()
+    pet_name = models.CharField(default='Not have any pet', max_length=50)
 
 class Post(models.Model):
 
