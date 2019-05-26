@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            Posts
+        {% endif %}
+    </title>
+</head>
+<body>
+    {% if message %}
+        {{ message }}
+    {% endif %}
+    
+    {% block data %}
+
+    {% endblock data %}
+</body>
+</html>
