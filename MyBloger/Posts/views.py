@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
+from django.views.generic import TemplateView
 
-class HomePage(View):
+class HomePage(TemplateView):
 
-    def get(self, request, *args, **kwargs):
-        return HttpResponse("Home Page")
+    template_name = 'Posts/Home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Home | Posts"
+        return context
