@@ -2,17 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 from django.views.generic import TemplateView
+from .models import Post
 
-
-Posts = [
-    {
-    "Title" : "First Post Title",
-    "Content" : "First post content !",
-    "Publish_date" : "Published date time",
-    "Last_updated" : "Last Update time",
-    "Auther" : "Auther of the post"
-    }
-]
+Posts = Post.objects.all()
 
 class HomePage(TemplateView):
 

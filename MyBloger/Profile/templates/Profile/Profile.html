@@ -1,0 +1,6 @@
+{% extends 'Posts/Base.html' %}
+{% block data %}
+    {% if user.is_authenticated %}
+        {{ user.username }}
+    {% endif %}
+{% endblock data %}
