@@ -1,0 +1,11 @@
+{% extends 'Posts/Base.html' %}
+{% block data %}
+    <form method='POST'>
+        <fieldset>
+            <legend>User Login</legend>
+            {% csrf_token %}
+            {{ form.as_p }}
+        </fieldset>
+        <button type='submit' > Sign In </button>
+    </form>
+{% endblock data %}
