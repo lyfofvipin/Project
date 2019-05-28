@@ -1,6 +1,8 @@
 {% extends 'Posts/Base.html' %}
 {% block data %}
     {% if user.is_authenticated %}
-        {{ user.username }}
+        {{ user.username }}<br>
+        {{ user.email }}<br>
+        <img src="{{ user.profile.Profile_pic.url }}">
     {% endif %}
 {% endblock data %}
