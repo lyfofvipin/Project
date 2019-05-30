@@ -3,7 +3,7 @@
     {% if user.is_authenticated %}
         {{ user.username }}<br>
         {{ user.email }}<br>
-        <img src="{{ user.profile.Profile_pic.url }}" alt="{{ user.username }}Profile Picture">
+        <img src="{{ user.profile.Profile_pic.url }}" alt="{{ user.username }} Profile Picture">
     {% endif %}
     <form method="POST">
         <fieldset>
