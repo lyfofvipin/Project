@@ -27,5 +27,5 @@ urlpatterns = [
     path('', include('Registrationapp.urls')),
     path('login', auth_views.LoginView.as_view(template_name='Loginapp/Login.html'), name='Login'),
     path('logout', auth_views.LogoutView.as_view(template_name='Loginapp/Logout.html'), name='Logout'),
-    path("profile", profile_views.Profile.as_view(), name="Profile")
+    path("profile", profile_views.ProfileUpdaeView.as_view(), name="Profile")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -9,8 +9,8 @@
         <fieldset>
             <legend> User_profile</legend>
             {% csrf_token %}
-                {{ form.as_p }}
                 {{ pro_form.as_p }}
+                {{ form.as_p }}
         </fieldset>
         <button type="submit">Update</button>
     </form>
