@@ -5,7 +5,7 @@
         {{ user.email }}<br>
         <img src="{{ user.profile.Profile_pic.url }}" alt="{{ user.username }} Profile Picture">
     {% endif %}
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend> User_profile</legend>
             {% csrf_token %}
