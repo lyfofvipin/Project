@@ -12,7 +12,7 @@ class Post(models.Model):
 
     Title = models.CharField(default='Title Of Post', max_length=50)
     Content = models.TextField()
-    Publish_date = models.DateTimeField(auto_now_add=False)
+    Publish_date = models.DateTimeField(auto_now_add=True)
     Last_updated = models.DateTimeField(auto_now=True)
     Auther = models.ForeignKey(User, on_delete=models.CASCADE)
 

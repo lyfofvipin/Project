@@ -1,0 +1,13 @@
+{% extends 'Posts/Base.html' %}
+{% block data %}
+    <h2>Are you sure you want to delete it ?</h2>
+   <form method='POST'>
+        <fieldset>
+            {% csrf_token %}
+            <legend>Delete Post {{ object.Title }}</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <button type='submit'>Delete</button>
+        <a href'{% url 'post-detail' object.id %}'>
+    </form>
+{% endblock data %}
