@@ -1,14 +1,14 @@
 {% extends 'Posts/Base.html' %}
 {% block data %}
-    <h1> Home Page ! </h1>
+    <h1> Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
      {% for post in Posts %}
         {{ post.Title }} <br>
-        {{ post.Auther }} <br>
         <p>
             {{ post.Content }} <br>
         </p>
         
      {% endfor %}
+
      {% if is_paginated %}
      
         {% if page_obj.has_previous %}

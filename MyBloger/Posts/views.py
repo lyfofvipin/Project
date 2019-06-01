@@ -1,11 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render,  get_object_or_404
 from django.http import HttpResponse
 from django.views import View
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 
+User = get_user_model()
+
 Posts = Post.objects.all()
+
+
+class UserPostDetaileView(ListView):
+    
+    model = Post
+    template_name = 'Posts/user_post_details.html'
+    context_object_name = 'Posts'
+    paginate_by = 2
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(Auther=user).order_by('-Publish_date')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "User | Posts"
+        return context
 
 class HomePage(ListView):
 
@@ -13,6 +33,7 @@ class HomePage(ListView):
     template_name = 'Posts/Home.html'
     context_object_name = 'Posts'
     ordering = ['-Publish_date']
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
