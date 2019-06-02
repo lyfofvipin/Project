@@ -27,5 +27,37 @@ urlpatterns = [
     path('', include('Registrationapp.urls')),
     path('login', auth_views.LoginView.as_view(template_name='Loginapp/Login.html'), name='Login'),
     path('logout', auth_views.LogoutView.as_view(template_name='Loginapp/Logout.html'), name='Logout'),
-    path("profile", profile_views.ProfileUpdaeView.as_view(), name="Profile")
+    path("profile", profile_views.ProfileUpdaeView.as_view(), name="Profile"),
+    path('password-reset/',
+        auth_views.PasswordResetView.as_view(
+        template_name='PasswordReset/password_reset.html'),
+        name='password_reset'),
+    path('password-reset/done/',
+        auth_views.PasswordResetDoneView.as_view(
+        template_name='PasswordReset/password_reset_done.html'),
+        name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/',
+        auth_views.PasswordResetConfirmView.as_view(
+        template_name='PasswordReset/password_reset_confirm.html'),
+        name='password_reset_confirm'),
+    path('password-reset-complete/',
+        auth_views.PasswordResetCompleteView.as_view(
+        template_name='PasswordReset/password_reset_complete.html'),
+        name='password_reset_complete'),
+    # path('password_reset',
+    #     auth_views.PasswordResetView.as_view(
+    #     template_name='PasswordReset/password_reset.html'),
+    #     name='password-reset'),
+    # path('password-reset/done',
+    #     auth_views.PasswordResetDoneView.as_view(
+    #     template_name='PasseordReset/password_reset_done.html'),
+    #     name='password-reset-done'),
+    # path('password-reset-confirm/<uidb64>/<token>/',
+    #     auth_views.PasswordResetConfirmView.as_view(
+    #     template_name='PasswordReset/password_reset_confirm.html'),
+    #     name='password_reset_confirm'),
+    # path('password-reset-complete',
+    #     auth_views.PasswordResetCompleteView.as_view(
+    #     template_name='PasswordReset/password_reset_complete.html'),
+    #     name='password-reset-complete')        
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'PasswordReset.apps.PasswordresetConfig',
     'Profile.apps.ProfileConfig',
     'Loginapp.apps.LoginappConfig',
     'Posts.apps.PostsConfig',
@@ -130,3 +131,10 @@ LOGIN_URL = '/login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
 MEDIA_URL = '/Media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'Youremailaddress'
+EMAIL_HOST_PASSWORD = 'youremailpassword'
