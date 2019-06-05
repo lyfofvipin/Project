@@ -1,6 +1,12 @@
 <!DOCTYPE html >
 <html>
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>
         {% if title %}
             {{ title }}
@@ -8,70 +14,29 @@
             Posts
         {% endif %}
     </title>
-<link href="bootstrap.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-<!-- start for 1 section-->
-<div class="section-01">
-<div class="col-md-8 section01 space"> <b>My Bologer</b> </div>
-<div class="col-md-4 section01 section1"> <input id="searchbox" type="text" value="search this website..." name=" " style="border:#FF3399 1px solid"> </div>
-</div>
-<!--end-->
 
-<!-- for section 02-->
-<div class="section-02">
-<div class="col-md-12 section2">
-<div class="col-md-2"><b>HOME</b></div>
-<div class="col-md-2"><b>ABOUT US</b></div>
-<div class="col-md-2"><b>PROFILE</b></div>
-<div class="col-md-2"><b>LOGIN</b></div>
-<div class="col-md-2"><b>LOGOUT</b></div>
-<div class="col-md-2"><b>MY POST</b></div>
-</div> 
-</div>
-<!--end-->
-<!-- for section 03-->
-<div class="section-03">
-<div class="col-md-12 section3"><strong>WEL-COME TO MY BLOGER.COM</strong>
-</div>
-</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 {% if messages %}
         {% for message in messages %}
             {{ message }}
         {% endfor %}
     {% endif %}
-    
-    {% block data %}
+    <div class="container">
+        {% block data %}
 
-    {% endblock data %}
-
+        {% endblock data %}
+    </div>        
+  
 </body>
 
 </html>
-
-{% comment %} .space{background-color:#999999;
- height:100px; 
- font-size:28px;
- color:#FF0099;
- text-align:center;
- font-family: Georgia, "Times New Roman", Times, serif ;
- padding:30px;
- text-shadow: #330066 10px 3px 5px;  
- }
- .section1{
- background-color:#999999;
- height:100px;
- padding:30px;
- }
- .section2{ height:50px;
- font-size:24px;
- background-color:#999999;
- color:#000000;
- }
- .section3{ text-align:center;
- height:150px;
- font-size:24px;
- background-color:#330099;
- color: #FFFFFF;
- padding:50px; {% endcomment %}
