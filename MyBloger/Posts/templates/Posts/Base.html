@@ -1,3 +1,4 @@
+<!DOCTYPE html >
 <html>
 <head>
     <title>
@@ -7,9 +8,35 @@
             Posts
         {% endif %}
     </title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    {% if messages %}
+<!-- start for 1 section-->
+<div class="section-01">
+<div class="col-md-8 section01 space"> <b>My Bologer</b> </div>
+<div class="col-md-4 section01 section1"> <input id="searchbox" type="text" value="search this website..." name=" " style="border:#FF3399 1px solid"> </div>
+</div>
+<!--end-->
+
+<!-- for section 02-->
+<div class="section-02">
+<div class="col-md-12 section2">
+<div class="col-md-2"><b>HOME</b></div>
+<div class="col-md-2"><b>ABOUT US</b></div>
+<div class="col-md-2"><b>PROFILE</b></div>
+<div class="col-md-2"><b>LOGIN</b></div>
+<div class="col-md-2"><b>LOGOUT</b></div>
+<div class="col-md-2"><b>MY POST</b></div>
+</div> 
+</div>
+<!--end-->
+<!-- for section 03-->
+<div class="section-03">
+<div class="col-md-12 section3"><strong>WEL-COME TO MY BLOGER.COM</strong>
+</div>
+</div>
+{% if messages %}
         {% for message in messages %}
             {{ message }}
         {% endfor %}
@@ -18,5 +45,33 @@
     {% block data %}
 
     {% endblock data %}
+
 </body>
+
 </html>
+
+{% comment %} .space{background-color:#999999;
+ height:100px; 
+ font-size:28px;
+ color:#FF0099;
+ text-align:center;
+ font-family: Georgia, "Times New Roman", Times, serif ;
+ padding:30px;
+ text-shadow: #330066 10px 3px 5px;  
+ }
+ .section1{
+ background-color:#999999;
+ height:100px;
+ padding:30px;
+ }
+ .section2{ height:50px;
+ font-size:24px;
+ background-color:#999999;
+ color:#000000;
+ }
+ .section3{ text-align:center;
+ height:150px;
+ font-size:24px;
+ background-color:#330099;
+ color: #FFFFFF;
+ padding:50px; {% endcomment %}
