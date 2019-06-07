@@ -80,11 +80,18 @@ class PostUpdaeView(LoginRequiredMixin, UpdateView):
             return True
         return False
 
-def PostDeliteView(LoginRequiredMixin, DeleteView):
+class PostDeliteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
     model = Post
+    success_url = '/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Delete | Posts"
         return context
+
+    def test_func(self):
+        post = self.get_object()
+        if  self.request.user == post.Auther:
+            return True
+        return False        
