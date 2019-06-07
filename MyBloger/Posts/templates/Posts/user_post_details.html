@@ -1,29 +1,10 @@
 {% extends 'Posts/Base.html' %}
 {% block data %}
-    <h1> Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
+    <h1 class="mb-3"> Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
      {% for post in Posts %}
         {{ post.Title }} <br>
         <p>
             {{ post.Content }} <br>
         </p>
-        
      {% endfor %}
-
-     {% if is_paginated %}
-     
-        {% if page_obj.has_previous %}
-            <a href="{{ Home }}/?page=1"> First </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ Home }}/?page={{ page_obj.previous_page_number }}"> previous </a>
-        {% endif %}
-
-        {% for page in page_obj.paginator.page_range %}
-            
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{{ Home }}/?page={{ page_obj.next_page_number }}">Next </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="{{ Home }}/?page={{ page_obj.paginator.num_pages }}"> Last </a> 
-        {% endif %}
-
-     {% endif %}
 {% endblock data %}

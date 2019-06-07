@@ -1,29 +1,15 @@
 {% extends 'Posts/Base.html' %}
 {% block data %}
     <h1> Home Page ! </h1>
-     {% for post in Posts %}
-        {{ post.Title }} <br>
-        {{ post.Auther }} <br>
+    <br>
+    <br>
+    {% for post in Posts %}
+        <h3><a href="{% url 'post-detail' post.id %}">{{ post.Title }}</a><br></h3>
+        <a href="{% url 'user-post-detail' post.Auther %}">{{ post.Auther }}</a><br>
         <p>
             {{ post.Content }} <br>
         </p>
-        
-     {% endfor %}
-     {% if is_paginated %}
-     
-        {% if page_obj.has_previous %}
-            <a href="{{ Home }}/?page=1"> First </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ Home }}/?page={{ page_obj.previous_page_number }}"> previous </a>
-        {% endif %}
-
-        {% for page in page_obj.paginator.page_range %}
-            
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{{ Home }}/?page={{ page_obj.next_page_number }}">Next </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="{{ Home }}/?page={{ page_obj.paginator.num_pages }}"> Last </a> 
-        {% endif %}
-
-     {% endif %}
+        <br>
+    {% endfor %}
+    
 {% endblock data %}

@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import get_user_model
 from .models import Profile
+from Posts.models import Post
+from django.views.generic import ListView
 from .forms import UserDetailUpdateForm, UserProfileUpdateForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import UpdateView
 
 User = get_user_model()

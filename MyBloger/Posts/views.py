@@ -1,4 +1,4 @@
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import View
 from django.contrib.auth import get_user_model
@@ -8,7 +8,7 @@ from .models import Post
 
 User = get_user_model()
 
-Posts = Post.objects.all()
+# Posts = Post.objects.all()
 
 
 class UserPostDetaileView(ListView):
@@ -64,7 +64,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.Auther = self.request.user
         return super().form_valid(form)
 
-class PostUpdaeView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostUpdaeView(LoginRequiredMixin, UpdateView):
 
     model = Post
     fields = ['Title', 'Content']
@@ -78,9 +78,9 @@ class PostUpdaeView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         post = self.get_object()
         if  self.request.user == post.Auther:
             return True
-        return False            
+        return False
 
-def PostDeliteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+def PostDeliteView(LoginRequiredMixin, DeleteView):
 
     model = Post
 
