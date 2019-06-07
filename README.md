@@ -13,31 +13,31 @@ user can change there Passwords, Profile Picture and username if they want.
 Available routs for the users :-
     1.  'admin/'
         This route is for Admin of the website.
-    1. '/'  [name='Home']
+    2. '/'  [name='Home']
         This is the home route here user can see the latest post of another users  and can got to other routes when needed.
-    1. 'post/<int:pk>' [name='post-detail']
+    3. 'post/<int:pk>' [name='post-detail']
         This route will provide an brief detail of an specific post of any user.
-    1. 'new-post' [name='post-create']
+    4. 'new-post' [name='post-create']
         This route will take user to a page that allow you to create a new Post.
-    1. 'post/<int:pk>/update' [name='post-update']
+    5. 'post/<int:pk>/update' [name='post-update']
         This page will allow user to update there post if they want to modify that.
-    1. 'user/<str:username>' [name='user-post-detail']
+    6. 'user/<str:username>' [name='user-post-detail']
         This route will display all the post a particular user.
-    1. 'post/<int:pk>/delete/' [name='post-delete']
+    7. 'post/<int:pk>/delete/' [name='post-delete']
         This route will allow users to delete there own post.
-    1. 'register' [name='Registration']
+    8. 'register' [name='Registration']
         This route is for registering a new user so they can create posts.
-    1. 'login' [name='Login']
+    9. 'login' [name='Login']
         After creating an account everyone has to login to create or modify there posts so this route help in logging in the user.
-    1. 'logout' [name='Logout']
+    10. 'logout' [name='Logout']
         This route will help user in logging out in any browser so anyone else can't misbehave there posts.
-    1. 'profile' [name='Profile']
+    11. 'profile' [name='Profile']
         This route provide all information of the logged in user and allow him to modify there details like username, email and profile picture.
-    1. 'password-reset/' [name='password_reset']
+    12. 'password-reset/' [name='password_reset']
         This route come in use when a user forgot his password and want to reset them.
-    1. 'password-reset/done/' [name='password_reset_done']
+    13. 'password-reset/done/' [name='password_reset_done']
         This route confirms that an password reset link is been sanded to the user mail address.
-    1. 'password-reset-confirm/<uidb64>/<token>/' [name='password_reset_confirm']
+    14. 'password-reset-confirm/<uidb64>/<token>/' [name='password_reset_confirm']
         This route come in use when user click on the password reset link on there mail.
-    1. 'password-reset-complete/' [name='password_reset_complete']
+    15. 'password-reset-complete/' [name='password_reset_complete']
         This route will confirm that your password has been change.
