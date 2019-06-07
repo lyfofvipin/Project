@@ -10,7 +10,8 @@ user can change there Passwords, Profile Picture and username if they want.
 
 #####[Requirements](https://github.com/vipin3699/Projects/blob/master/MyBloger/requirements.txt)
 
-Available routs for the users :-
+```Available routs for the users :-
+
     1.  'admin/'
         This route is for Admin of the website.
     2. '/'  [name='Home']
@@ -40,4 +41,4 @@ Available routs for the users :-
     14. 'password-reset-confirm/<uidb64>/<token>/' [name='password_reset_confirm']
         This route come in use when user click on the password reset link on there mail.
     15. 'password-reset-complete/' [name='password_reset_complete']
-        This route will confirm that your password has been change.
+        This route will confirm that your password has been change.```
