@@ -1,14 +1,14 @@
 # Projects
 ## I keep all my projects in this repository which I code in any language.
 
-###[My Bloger](https://github.com/vipin3699/Projects/tree/master/MyBloger)
+### [My Bloger](https://github.com/vipin3699/Projects/tree/master/MyBloger)
 
 This Project is my first test project i have completed with learning Django, I create database models, link and routes, Forms, use class based views, learn about Admin page and about jinja2.
 
 This app is similar to WordPress or any blogger here user can create posts and modify them if needed and delete if nessesury each user have an account for creating posts and modifying them, 
 user can change there Passwords, Profile Picture and username if they want.
 
-#####[Requirements](https://github.com/vipin3699/Projects/blob/master/MyBloger/requirements.txt)
+##### [Requirements](https://github.com/vipin3699/Projects/blob/master/MyBloger/requirements.txt)
 
 ```Available routs for the users :-
 
