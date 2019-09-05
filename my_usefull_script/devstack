@@ -1,0 +1,59 @@
+cat initial_setup.txt 
+    1  vi /etc/selinux/config 
+    2  sudo useradd stack
+    3  sudo passwd stack  # specify a password
+    4  echo "stack ALL=(root) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/stack
+    5  sudo chmod 0440 /etc/sudoers.d/stack
+    6  su - stack
+
+
+cat devstack.txt 
+    1  sudo hostnamectl set-hostname myhost.mydomain
+    2  sudo hostnamectl set-hostname --transient myhost.mydomain
+    3  vi /etc/hosts
+    4  sudo vi /etc/hosts
+    7  rpm -qa | grep firewalld
+    8             sudo systemctl disable firewalld
+    9             sudo systemctl stop firewalld
+   10  sudo dnf -y remove firewalld
+   11  sudo dnf -y install iptables-services
+   12             sudo systemctl enable iptables
+   13  sudo systemctl start iptables
+   14  sudo dnf -y install git vim tmux
+   15  sudo dnf -y update
+   16  sudo dnf update
+   17  cat /etc/redhat-release 
+   18  sudo reboot
+   20  git clone https://opendev.org/openstack/devstack
+   21  cd devstack/
+   22  ls
+   23  git pull https://review.opendev.org/openstack/devstack refs/changes/84/678184/1
+   24    git config --global user.email "you@example.com"
+   25    git config --global user.name "Your Name"
+   26  git pull https://review.opendev.org/openstack/devstack refs/changes/84/678184/1
+   27  git show
+   28  ls
+   29  vim local.conf
+ ============
+cat local.conf 
+[[local|localrc]]
+ADMIN_PASSWORD=secret
+DATABASE_PASSWORD=$ADMIN_PASSWORD
+RABBIT_PASSWORD=$ADMIN_PASSWORD
+SERVICE_PASSWORD=$ADMIN_PASSWORD
+HOST_IP=192.168.122.21
+============
+   33  ifconfig
+   34  vim local.conf
+   35  tmux new -s foobar
+   36  cd devstack/
+   37  ./stack.sh 
+   38  ifconfig
+   39  sudo iptables -I INPUT --in-interface enp1s0 -j ACCEPT → horizon
+   
+After instance launch
+→ go to security group add rule
+→ direction → ingress
+→ add ssh & icmp rule for ping and ssh
+→ ssh cirros@172.24.4.46 passwd → go
+
