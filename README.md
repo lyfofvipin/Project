@@ -9,9 +9,15 @@ This app is similar to WordPress or any blogger here user can create posts and m
 user can change there Passwords, Profile Picture and username if they want.
 
 ##### [Requirements](https://github.com/vipin3699/Projects/blob/master/MyBloger/requirements.txt)
+    
+Django>=2.2.2
+django-crispy-forms==1.7.2
+Pillow==6.0.0
+pytz==2019.1
+sqlparse==0.3.0
 
-```Available routs for the users :-
-
+Available routs for the :-
+```
     1.  'admin/'
         This route is for Admin of the website.
     2. '/'  [name='Home']
