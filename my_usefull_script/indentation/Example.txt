@@ -28,7 +28,7 @@ void test()
 }
 "
 
-Input file cprogramIF.c :-
+Output file cprogramIF.c :-
 
 "
 #include<stdio.h>
